@@ -1,12 +1,12 @@
 # GestureAI-iOS
 
-Hand-gesture recognizer
-
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
-This app is using RNN with CoreML on iOS11.
+Hand-gesture recognizer
 
-Click [here](https://github.com/akimach/GestureAI) to read more about GestureAI.
+![screenshot-01](images/screenshot-01.jpg) ![screenshot-02](images/screenshot-02.jpg) ![screenshot-03](images/screenshot-03.jpg)
+
+This app is using RNN with CoreML on iOS11. Click [here](https://github.com/akimach/GestureAI) to read more about GestureAI.
 
 ## Install
 
