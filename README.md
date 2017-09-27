@@ -21,7 +21,7 @@ Click [here](https://github.com/akimach/GestureAI) to read more about GestureAI.
 
 ## Licence
 
-[MIT](https://github.com/akimach/GestureAI/blob/master/LICENSE)
+[MIT](https://github.com/akimach/GestureAI-iOS/blob/master/LICENSE)
 
 ## Author
 
