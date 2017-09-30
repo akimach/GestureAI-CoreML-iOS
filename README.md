@@ -4,6 +4,12 @@
 
 Hand-gesture recognizer
 
+## Demo
+
+![demo](images/demo.gif)
+
+## Screenshots
+
 ![screenshot-01](images/screenshot-01.jpg) ![screenshot-02](images/screenshot-02.jpg) ![screenshot-03](images/screenshot-03.jpg)
 
 This app is using RNN with CoreML on iOS11. The model recognizes the gesture as long as the center button is pressed.
