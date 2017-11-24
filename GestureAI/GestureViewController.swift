@@ -12,8 +12,10 @@ import CoreMotion
 
 class GestureViewController: UIViewController {
     
-    private let queue = OperationQueue.init()
+    // MARK:- Properties
+    
     private var gestureAI = GestureAI()
+    private let queue = OperationQueue.init()
     private let motionManager = CMMotionManager()
     private lazy var timer: Timer = {
         Timer.scheduledTimer(timeInterval: 1.0, target: self,
@@ -91,11 +93,13 @@ class GestureViewController: UIViewController {
             return
         }
         
+        // Pay attention to input dimension for RNN
         for _ in cnt..<lengthMax*inputDim {
             self.sequenceTarget.append(0.0)
         }
 
         let output = predict(self.sequenceTarget)
+        // Find a maximum likelihood
         var max = Double(truncating: output.output1[0])
         var index_max: Int = 0
         let end = output.output1.count
@@ -106,19 +110,12 @@ class GestureViewController: UIViewController {
                 index_max = i
             }
         }
-        gestureAI = GestureAI()
         
+        gestureAI = GestureAI()
         guard let symbol = GASymbol.map[index_max] else {
             return
         }
         gaArea.text = symbol
-    }
-    
-    func getHttp(response:URLResponse?,data:Data?,error:Error?){
-        if let e = error {
-            print(e.localizedDescription)
-        }
-        //print( NSString(data: data! as Data, encoding: String.Encoding.utf8.rawValue)! );
     }
     
     // MARK:- Utils
@@ -133,6 +130,11 @@ class GestureViewController: UIViewController {
         cntTimer += 1
     }
     
+    /// Convert double array type into MLMultiArray
+    ///
+    /// - Parameters:
+    /// - arr: double array
+    /// - Returns: MLMultiArray
     private func toMLMultiArray(_ arr: [Double]) -> MLMultiArray {
         guard let sequence = try? MLMultiArray(shape:[120], dataType:MLMultiArrayDataType.double) else {
             fatalError("Unexpected runtime error. MLMultiArray")
@@ -144,17 +146,17 @@ class GestureViewController: UIViewController {
         return sequence
     }
     
+    /// Predict class label
+    ///
+    /// - Parameters:
+    /// - arr: Sequence
+    /// - Returns: Likelihood
     private func predict(_ arr: [Double]) -> GestureAIOutput {
         guard let output = try? gestureAI.prediction(input:
             GestureAIInput(input1: toMLMultiArray(arr))) else {
                 fatalError("Unexpected runtime error.")
         }
         return output
-    }
-    
-    private func validateUrl (urlString: String) -> Bool {
-        let urlRegEx = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
-        return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: urlString)
     }
 }
 
