@@ -25,6 +25,10 @@ Click [here](https://github.com/akimach/GestureAI) to read more about GestureAI.
 5. Add `GestureAI.mlmodel` into **Compile Sources** in Build Phases.
 6. Build and run.
 
+# Guide To CoreML Models
+
+See [likedan/Awesome-CoreML-Models](https://github.com/likedan/Awesome-CoreML-Models).
+
 ## Licence
 
 [MIT](https://github.com/akimach/GestureAI-iOS/blob/master/LICENSE)
