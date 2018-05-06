@@ -1,6 +1,6 @@
 # GestureAI-CoreML-iOS
 
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) ![](https://img.shields.io/badge/platform-iOS-red.svg) ![](https://img.shields.io/badge/language-Swift%204.x-orange.svg) 
 
 Hand-gesture recognizer
 
