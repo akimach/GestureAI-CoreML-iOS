@@ -2,7 +2,7 @@
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) ![](https://img.shields.io/badge/platform-iOS-red.svg) ![](https://img.shields.io/badge/language-Swift%204.x-orange.svg) 
 
-Hand-gesture recognizer
+Hand-gesture recognizer using CoreML
 
 ## Demo
 
@@ -12,7 +12,7 @@ Hand-gesture recognizer
 
 ![screenshot-01](images/screenshot-01.jpg) ![screenshot-02](images/screenshot-02.jpg) ![screenshot-03](images/screenshot-03.jpg)
 
-This app is using RNN with CoreML on iOS11. The model recognizes the gesture as long as the center button is pressed.
+This app is using RNN(Recurrent Neural network) with CoreML on iOS11. The model recognizes the gesture as long as the center button is pressed.
 
 Click [here](https://github.com/akimach/GestureAI) to read more about GestureAI.
 
